@@ -5,18 +5,34 @@
 
 require __DIR__ . '/../src/Animal.php';
 
-$animal1 = new Animal();
-$animal2 = new Animal();
-$animal3 = new Animal();
+$lion = new Animal();
+$parrot = new Animal();
+$python = new Animal();
 
-// var_dump(($animal1));
-// var_dump(($animal2));
-// var_dump(($animal3));
+// var_dump(($lion));
+// var_dump(($parrot));
+// var_dump(($python));
 
-$animals = [$animal1, $animal2, $animal3];
+$animals = [$lion, $parrot, $python];
 
-// $animals = [$animal1, $animal2];
+$lion->name = "lion";
+$lion->pawNumber = "4";
+$lion->carnivorous = true;
+$lion->size = 50;
+$lion->threatenedLevel = "VU";
 
+
+$parrot->name = "parrot";
+$parrot->size = 50;
+$parrot->pawNumber = "2";
+$parrot->threatenedLevel = "LC";
+
+$python->name = "python";
+$python->size = 50;
+$python->pawNumber = "0";
+$python->threatenedLevel = "LC";
+
+echo 'Bonjour, je suis un ' . $lion->name . " et j'ai " . $lion->pawNumber . " patte(s)";
 
 /***************************************/
 /***************************************/

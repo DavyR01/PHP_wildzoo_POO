@@ -46,7 +46,7 @@
                             <?php endif; ?>
                             <?php if (isset($animal->threatenedLevel)) : ?>
                                 <li class="iucn"><?= $animal->threatenedLevel ?></li>
-                                <?php endif; ?>
+                            <?php endif; ?>
 
 
                         </ul>
