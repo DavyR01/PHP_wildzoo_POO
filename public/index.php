@@ -11,6 +11,9 @@ $lion->pawNumber = 4;
 $lion->carnivorous = true;
 $lion->size = 70;
 $lion->threatenedLevel = 'VU';
+// echo $lion->speak('fr');
+// echo $lion->speak('en');
+// echo $lion->speak();
 
 $parrot = new Animal();
 $parrot->name = 'parrot';
@@ -31,4 +34,3 @@ $animals = [$lion, $parrot, $elephant];
 
 // Do not modify code below
 require 'view.php';
-?>
