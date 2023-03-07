@@ -2,12 +2,19 @@
 
 class Animal
 {
+    // Propriétés
     private string $name;
     private float $size = 100;
     private bool $carnivorous = false;
     private int $pawNumber;
     private string $threatenedLevel = 'NE';
 
+    // On placera le Constructor en 1er dans les méthodes
+    public function __construct(string $name, int $pawNumber)
+    {
+        $this->name = $name;
+        $this->setPawNumber($pawNumber);
+    }
     public function speak(string $lang = 'fr'): string
     {
         if ($lang === 'fr') {
@@ -24,12 +31,6 @@ class Animal
         return $this->size > 50 && $this->carnivorous === true;
     }
 
-    // Constructor
-    public function __construct(string $name, int $pawNumber)
-    {
-        $this->name = $name;
-        $this->setPawNumber($pawNumber);
-    }
     public function getSize(): float
     {
         return $this->size;
