@@ -5,9 +5,9 @@
 
 require __DIR__ . '/../src/Animal.php';
 require __DIR__ . '/../src/Area.php';
-require __DIR__ . '/../src/Mammal.php';
 require __DIR__ . '/../src/Fish.php';
 require __DIR__ . '/../src/Bird.php';
+require __DIR__ . '/../src/Mammal.php';
 require __DIR__ . '/../src/Felid.php';
 
 use App\Area;
@@ -17,15 +17,16 @@ use App\Mammal;
 use App\Fish;
 use App\Felid;
 
-$lion = new Mammal('lion', 4);
-$lion->setCarnivorous(true);
+// $lion = new Felid('lion', 4);
+$lion = new Felid('lion');
+// $lion->setCarnivorous(true);
 $lion->setSize(70);
 $lion->setThreatenedLevel('VU');
 
 $parrot = new Bird('parrot', 2);
 $parrot->setSize(30);
 
-$elephant = new Animal('elephant', 4);
+$elephant = new Mammal('elephant', 4);
 $elephant->setThreatenedLevel('LC');
 
 $animals = [$lion, $parrot, $elephant];

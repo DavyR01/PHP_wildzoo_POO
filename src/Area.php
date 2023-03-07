@@ -6,10 +6,10 @@ class Area
 {
     private string $name;
     private array $animals = [];
-    
+
     public function __construct(string $name)
     {
-        $this->name = $name;        
+        $this->name = $name;
     }
 
     public function getName(): string
