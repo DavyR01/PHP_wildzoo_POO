@@ -7,11 +7,11 @@ class Animal
     public const CENTIMETERS_IN_METER = 100;
     public const SIZE_UNIT_CHANGE_LIMIT = 100;
     public const THREATENED_LEVELS = ['NE', 'DD', 'LC', 'NT', 'VU', 'EN', 'CR', 'EW', 'EX',];
-    
-    private string $name;
+
+    protected string $name;
     private float $size = 100;
     private bool $carnivorous = false;
-    private int $pawNumber;
+    protected int $pawNumber;
     private string $threatenedLevel = 'NE';
 
     public function __construct(string $name, int $pawNumber)
