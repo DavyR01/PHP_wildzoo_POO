@@ -2,9 +2,9 @@
 
 namespace App;
 
-class Bird extends Animal
+class Arachnide extends Anthropode
 {
-    private $pawNumber = 2;
+    private $pawNumber = 8;
     public function __construct(string $name)
     {
         parent::__construct($name, $this->pawNumber);
