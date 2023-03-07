@@ -2,11 +2,11 @@
 
 class Animal
 {
-    public string $name;
+    private string $name;
     private float $size = 100;
-    public bool $carnivorous = false;
-    public int $pawNumber;
-    public string $threatenedLevel = 'NE';
+    private bool $carnivorous = false;
+    private int $pawNumber;
+    private string $threatenedLevel = 'NE';
 
     public function speak(string $lang = 'fr'): string
     {
@@ -34,12 +34,16 @@ class Animal
     {
         return $this->size;
     }
-    public function setSize(int $size): void
+    public function setSize(float $size): void
     {
         if ($size <= 0) {
             $size = 1;
         }
         $this->size = $size;
+    }
+    public function getPawNumber(): int
+    {
+        return $this->pawNumber;
     }
     private function setPawNumber(int $pawNumber): void
     {
@@ -48,8 +52,24 @@ class Animal
         }
         $this->pawNumber = $pawNumber;
     }
-    public function getName(string $name)
+    public function getName(): string
     {
         return $this->name;
+    }
+    public function isCarnivorous(): bool
+    {
+        return $this->carnivorous;
+    }
+    public function setCarnivorous(bool $carnivorous): void
+    {
+        $this->carnivorous = $carnivorous;
+    }
+    public function getThreatenedLevel(): string
+    {
+        return $this->threatenedLevel;
+    }
+    public function setThreatenedLevel(string $level): void
+    {
+        $this->threatenedLevel = $level;
     }
 }
