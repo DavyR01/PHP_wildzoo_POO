@@ -8,6 +8,8 @@ require '../vendor/autoload.php';
 use App\Animal\Bird;
 use App\Area\Desert;
 use App\Area\Jungle;
+use App\Area\Cage;
+use App\Area\Box;
 use App\Animal\Equid;
 use App\Animal\Felid;
 use App\Animal\Snake;
@@ -74,6 +76,8 @@ $scorpio->setCarnivorous(true);
 $bee = new Insect('bee');
 $bee->setSize(2);
 
+
+
 $animals = [$elephant, $lion, $tiger, $zebra, $parrot, $shark, $python, $scorpio, $tarentula, $bee];
 
 try {
@@ -85,12 +89,27 @@ try {
 
     $desert = new Desert('desert');
     $desert->addAnimal($scorpio);
-    // $desert->addAnimal($parrot); // indiquera un message d'erreur (Abstract pawNumber)
+    // $desert->addAnimal($parrot); // indiquera un message d'erreur (Abstract méthod isValid sur pawNumber)
 
     $aquarium = new Aquarium('aquarium');
     $aquarium->addAnimal($shark);
 
-    $areas = [$aquarium, $jungle, $desert];
+    # Animaux dangereux
+    $cage = new Cage('cage');
+    $cage->addAnimal($lion);
+    $cage->addAnimal($tiger);
+    $cage->addAnimal($python);
+    // $cage->addAnimal($bee); // Impossible car not dangerous
+
+    # Animaux avec taille < 50
+    $box = new Box('box');
+    $box->addAnimal($bee);
+    $box->addAnimal($tarentula);
+    $box->addAnimal($scorpio);
+    $box->addAnimal($parrot);
+    // $box->addAnimal($zebra); // Impossible car !size < 50
+
+    $areas = [$aquarium, $jungle, $desert, $cage, $box];
 } catch (Exception $exception) {
     $errors[] = $exception->getMessage();
 }
