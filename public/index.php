@@ -18,8 +18,9 @@ use App\Animal\Spider;
 use App\Area\Aquarium;
 use App\Animal\Arachnide;
 use App\Animal\Crocodilian;
+use App\Animal\Fish;
 
-$abstractAnimal = new Animal('abstract', 0);
+// $abstractAnimal = new Animal('abstract', 0);
 
 $elephant = new Mammal('elephant');
 try {
@@ -54,8 +55,11 @@ $zebra->setThreatenedLevel('EN');
 $parrot = new Bird('parrot');
 $parrot->setSize(30);
 
-$alligator = new Crocodilian('alligator');
-$alligator->setSize(180);
+// $alligator = new Crocodilian('alligator'); // indiquera un message d'erreur (Abstract class Fish obligatoire et non Crocodilian)
+// $alligator->setSize(180);
+
+$shark = new Fish('shark');
+$shark->setSize(180);
 
 $python = new Snake('python');
 $python->setSize(300);
@@ -70,20 +74,21 @@ $scorpio->setCarnivorous(true);
 $bee = new Insect('bee');
 $bee->setSize(2);
 
-$animals = [$abstractAnimal, $elephant, $lion, $tiger, $zebra, $parrot, $alligator, $python, $scorpio, $tarentula, $bee];
+$animals = [$elephant, $lion, $tiger, $zebra, $parrot, $shark, $python, $scorpio, $tarentula, $bee];
 
 try {
     $jungle = new Jungle('jungle');
     $jungle->addAnimal($parrot);
-    $jungle->addAnimal($alligator);
+    $jungle->addAnimal($shark);
     $jungle->addAnimal($tarentula);
     $jungle->addAnimal($tiger);
 
     $desert = new Desert('desert');
     $desert->addAnimal($scorpio);
+    // $desert->addAnimal($parrot); // indiquera un message d'erreur (Abstract pawNumber)
 
     $aquarium = new Aquarium('aquarium');
-    $aquarium->addAnimal($alligator);
+    $aquarium->addAnimal($shark);
 
     $areas = [$aquarium, $jungle, $desert];
 } catch (Exception $exception) {

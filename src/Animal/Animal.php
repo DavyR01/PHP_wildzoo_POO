@@ -7,7 +7,7 @@ use RangeException;
 use RuntimeException;
 use UnexpectedValueException;
 
-class Animal
+abstract class Animal
 {
     public const CENTIMETERS_IN_METER = 100;
     public const SIZE_UNIT_CHANGE_LIMIT = 100;
@@ -40,8 +40,8 @@ class Animal
         if ($size < 0) {
             throw new Exception('The size should be a positive number');
         }
-        if($size > 10000) {
-            throw new RangeException('The ' . $this->getName() . ' is too large');  
+        if ($size > 10000) {
+            throw new RangeException('The ' . $this->getName() . ' is too large');
         }
 
         $this->size = $size;
@@ -71,7 +71,7 @@ class Animal
             throw new UnexpectedValueException('La menace est incorrecte');
         }
 
-        if($threatenedLevel == 'EX') {
+        if ($threatenedLevel == 'EX') {
             throw new RuntimeException('Le ' . $this->getName() . ' ne peut être là, cette espèce est éteinte');
         }
 

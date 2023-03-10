@@ -4,7 +4,7 @@ namespace App\Area;
 
 use App\Animal\Animal;
 
-class Area
+abstract class Area
 {
     private string $name;
     private array $animals = [];
@@ -26,6 +26,11 @@ class Area
 
     public function addAnimal(Animal $animal)
     {
+        if (!$this->isValid($animal)) {
+            throw new \Exception('Impossible d\'ajouter '  . $animal->getName() . ' dans ' . $this->getName());
+        }
         $this->animals[] = $animal;
     }
+
+    abstract public function isValid(Animal $animal): bool;
 }
