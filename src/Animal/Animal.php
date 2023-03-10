@@ -107,9 +107,9 @@ abstract class Animal
     public function getSizeWithUnit(): string
     {
         if ($this->getSize() < self::SIZE_UNIT_CHANGE_LIMIT) {
-            return $this->getSize() . 'cm';
+            return $this->getSize() . ' cm';
         } else {
-            return ($this->getSize() / self::CENTIMETERS_IN_METER) . 'm';
+            return ($this->getSize() / self::CENTIMETERS_IN_METER) . ' m';
         }
     }
 }

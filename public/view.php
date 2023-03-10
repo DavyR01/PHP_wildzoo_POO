@@ -75,7 +75,7 @@ $areaType = $_GET['area'] ?? '';
         <?php endif ?>
 
         <div class="animals">
-            <!-- <?php if (isset(${$areaType}) && ${$areaType} instanceof Area && method_exists(${$areaType}, 'getAnimals')) : ?>
+            <?php if (isset(${$areaType}) && ${$areaType} instanceof Area && method_exists(${$areaType}, 'getAnimals')) : ?>
                 <?php if (method_exists(${$areaType}, 'isValid')) : ?>
                     <div class="selectionnable">
                         <?php foreach ($animals as $animal) : ?>
@@ -86,7 +86,7 @@ $areaType = $_GET['area'] ?? '';
                     </div>
                 <?php endif; ?>
                 <?php $animals = ${$areaType}->getAnimals(); ?>
-            <?php endif; ?> -->
+            <?php endif; ?>
             <?php foreach ($animals ?? [] as $key => $animal) : ?>
 
                 <article>
