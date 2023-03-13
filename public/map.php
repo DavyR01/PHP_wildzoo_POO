@@ -17,13 +17,13 @@ if (!empty($areas) && class_exists(Area::class)) : ?>
                     <?php if (method_exists($area, 'getName')) : ?>
                         <?php if ($key % 3 === $i) : ?>
                             <div class="plan-area">
-                                <img src="assets/images/areas/<?= $area->getName() ?>.png" alt="" >
+                                <img src="assets/images/areas/<?= $area->getName() ?>.png" alt="">
                                 <?php if (method_exists($area, 'getAnimals') && !empty($area->getAnimals())) : ?>
                                     <a id="area$i" data-name="<?= $area->getName() ?>" class="area-name" href="?area=<?= $area->getName() ?>"><?= $area->getName() ?></a>
                                 <?php else : ?>
                                     <?= $area->getName() ?>
                                 <?php endif; ?>
-                            </div>
+                            </div s>
                         <?php endif; ?>
                     <?php endif; ?>
                 <?php endforeach; ?>
@@ -31,5 +31,3 @@ if (!empty($areas) && class_exists(Area::class)) : ?>
         <?php endfor; ?>
     </div>
 <?php endif; ?>
-
-
